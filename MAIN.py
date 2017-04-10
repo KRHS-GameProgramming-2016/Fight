@@ -1,10 +1,10 @@
 import pygame, sys, math, random 
-from Boss import *
-from Enemy import *
+#from Boss import *
+#from Enemy import *
 from Level import *
-from Player import *
+#from Player import *               -- Once finished with player, make the level
 from Wall import *
-from Weapons import *
+#from Weapons import *
 
 
 
