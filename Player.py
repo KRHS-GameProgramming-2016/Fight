@@ -74,7 +74,7 @@ class Player():
             self.speedy = -self.speedy
             self.move()
             self.speedy = 0
-            self.didBounceY = True
+            self.didBounceY = True 
             
     def bounceWall(self, other):
         self.speedx = -self.speedx
@@ -86,6 +86,7 @@ class Player():
         self.didBounceY = True
         
     def playerWeapon(self):
+        if 
         
             
         
