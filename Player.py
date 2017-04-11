@@ -84,13 +84,5 @@ class Player():
         self.didBounceX = True
         self.speedy = 0
         self.didBounceY = True
-        
-    def playerWeapon(self):
-        if 
-        
-            
-        
-        
-        #           -- Make sure to add sprite.collide with the enemy, boss and wall. 
-        #           -- Need to add collide with the wall. 
+
     
