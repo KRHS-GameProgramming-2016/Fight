@@ -2,10 +2,11 @@ import pygame, sys, math, random
 #from Boss import *
 #from Enemy import *
 from Level import *
-#from Player import *               -- Once finished with player, make the level
-#from Wall import *
+#from Player import *               
+from Wall import *
 #from Weapons import *
-#from Tree1 import *
+from Tree1 import *
+from DownWall import *
 
 
 
@@ -22,11 +23,13 @@ all = pygame.sprite.OrderedUpdates()
 #players = pygame.sprite.Group()
 walls = pygame.sprite.Group()
 trees1 = pygame.sprite.Group()
+downwalls = pygame.sprite.Group()
  
 #Player.containers = all, players
 #Enemy.containers = all, enemies      -- Will add after the main part of the game is done
 Wall.containers = all, walls    
 Tree1.containers = all, trees1
+DownWall.containers = all, downwalls
 level = Level("level1.lvl")
 
 levlnum = 1   

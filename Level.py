@@ -5,11 +5,13 @@ from Boss import *
 from Weapons import *
 from Wall import *
 from Tree1 import *
+from DownWall import *
 
 class Level():
     def __init__(self, levelFile, tileSize=50):
         self.walls = []
         self.trees1  = []
+        self.downwalls = []
         self.enemies = []
         self.tileSize = tileSize
         self.player = None
@@ -19,6 +21,7 @@ class Level():
     def unloadLevel(self):
         self.walls = []
         self.trees1 = []
+        self.downwalls = []
         self.enemySpawn = []
       
                
@@ -59,7 +62,10 @@ class Level():
                     Tree1([x*self.tileSize + self.tileSize/2,
                            y*self.tileSize + self.tileSize/2],
                           self.tileSize)
-
+                if c == '@':
+                    DownWall([x*self.tileSize + self.tileSize/2,
+                           y*self.tileSize + self.tileSize/2],
+                          self.tileSize)
 
         
 #Level("level1.lvl")
