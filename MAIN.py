@@ -5,6 +5,7 @@ from Level import *
 #from Player import *               -- Once finished with player, make the level
 #from Wall import *
 #from Weapons import *
+#from Tree1 import *
 
 
 
@@ -20,10 +21,12 @@ bgColor = r,g,b = 21, 64, 22
 all = pygame.sprite.OrderedUpdates()
 #players = pygame.sprite.Group()
 walls = pygame.sprite.Group()
+trees1 = pygame.sprite.Group()
  
 #Player.containers = all, players
 #Enemy.containers = all, enemies      -- Will add after the main part of the game is done
 Wall.containers = all, walls    
+Tree1.containers = all, trees1
 level = Level("level1.lvl")
 
 levlnum = 1   

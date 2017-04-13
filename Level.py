@@ -4,10 +4,12 @@ from Enemy import *
 from Boss import *
 from Weapons import *
 from Wall import *
+from Tree1 import *
 
 class Level():
-    def __init__(self, levelFile, tileSize=25):
+    def __init__(self, levelFile, tileSize=50):
         self.walls = []
+        self.trees1  = []
         self.enemies = []
         self.tileSize = tileSize
         self.player = None
@@ -16,6 +18,7 @@ class Level():
     
     def unloadLevel(self):
         self.walls = []
+        self.trees1 = []
         self.enemySpawn = []
       
                
@@ -52,34 +55,11 @@ class Level():
                     Wall([x*self.tileSize + self.tileSize/2,
                            y*self.tileSize + self.tileSize/2],
                           self.tileSize)
-                #if c == "@":
-                    #self.player = Player([x*self.tileSize + self.tileSize/2,
-                                          #y*self.tileSize + self.tileSize/2],
-                                          #self.tileSize)
-                
-                #if c == ".":
-                    #self.enemies += [Enemy([x*self.tileSize + self.tileSize/2,
-                                          #y*self.tileSize + self.tileSize/2],
-                                          #self.tileSize)]
-                                          
-                #if c == "$":
-                    #self.goal = Goal([x*self.tileSize + self.tileSize/2,
-                                          #y*self.tileSize + self.tileSize/2],
-                                          #self.tileSize)
-                                          
-                #if c in "x" :       
-                    #self.enemies += [Enemy(1,
-                                       #[x*self.tileSize + self.tileSize/2,
-                                        #y*self.tileSize + self.tileSize/2],
-                                       #self.tileSize)
-                                  #]
-                                  
-                #if c in "y" :       
-                    #self.enemies += [ShootingEnemy(1,
-                                       #[x*self.tileSize + self.tileSize/2,
-                                        #y*self.tileSize + self.tileSize/2],
-                                       #self.tileSize)
-                                  #]
+                if c == '$':
+                    Tree1([x*self.tileSize + self.tileSize/2,
+                           y*self.tileSize + self.tileSize/2],
+                          self.tileSize)
+
 
         
 #Level("level1.lvl")
