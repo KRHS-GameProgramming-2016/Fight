@@ -8,7 +8,7 @@ class Player():
         load = pygame.image.load
         self.imageUp = load("Resources/PlayerImages/WithOutWeapon/PlayerUpNorm.png")
         self.imageDown = load("Resources/PlayerImages/WithOutWeapon/PlayerDownNorm.png")   #The player loads with weapon
-        self.imageleft = load("Resources/PlayerImages/WithOutWeapon/PlayerLeftNorm.png")
+        self.imageLeft = load("Resources/PlayerImages/WithOutWeapon/PlayerLeftNorm.png")
         self.imageRight = load("Resources/PlayerImages/WithOutWeapon/PlayerRightNorm.png")
         self.imageUp = pygame.transform.scale(self.imageUp, [tileSize,tileSize])
         self.imageDown = pygame.transform.scale(self.imageDown, [tileSize,tileSize])

@@ -66,6 +66,10 @@ class Level():
                     DownWall([x*self.tileSize + self.tileSize/2,
                            y*self.tileSize + self.tileSize/2],
                           self.tileSize)
+                if c == '&':
+                    Player([x*self.tileSize + self.tileSize/2,
+                           y*self.tileSize + self.tileSize/2],
+                          self.tileSize)
 
         
 #Level("level1.lvl")

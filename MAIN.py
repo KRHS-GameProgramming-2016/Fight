@@ -2,7 +2,7 @@ import pygame, sys, math, random
 #from Boss import *
 #from Enemy import *
 from Level import *
-#from Player import *               
+from Player import *               
 from Wall import *
 #from Weapons import *
 from Tree1 import *
@@ -20,12 +20,12 @@ screen = pygame.display.set_mode(size)
 bgColor = r,g,b = 21, 64, 22
 
 all = pygame.sprite.OrderedUpdates()
-#players = pygame.sprite.Group()
+players = pygame.sprite.Group()
 walls = pygame.sprite.Group()
 trees1 = pygame.sprite.Group()
 downwalls = pygame.sprite.Group()
  
-#Player.containers = all, players
+Player.containers = all, players
 #Enemy.containers = all, enemies      -- Will add after the main part of the game is done
 Wall.containers = all, walls    
 Tree1.containers = all, trees1
@@ -40,26 +40,26 @@ while True:
         if event.type == pygame.QUIT: sys.exit()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
-                player.go("up")
+                players.go("up")
             if event.key == pygame.K_DOWN:
-                player.go("down")
+                players.go("down")
             if event.key == pygame.K_RIGHT:
-                player.go("right")
+                players.go("right")
             if event.key == pygame.K_LEFT:
-                player.go("left")
+                players.go("left")
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_UP:
-                player.go("stop up")
+                players.go("stop up")
             if event.key == pygame.K_DOWN:
-                player.go("stop down")
+                players.go("stop down")
             if event.key == pygame.K_RIGHT:
-                player.go("stop right")
+                players.go("stop right")
             if event.key == pygame.K_LEFT:
-                player.go("stop left")
+                players.go("stop left")
                     
     bgImage = pygame.image.load("Resources/BackgroundImage/Background.png").convert()
     bgRect = bgImage.get_rect()
-    #all.update(size)    -- Need to add into Player, Enemey and Wall sripts 
+    all.update(size)    # Need to add into Player, Enemey and Wall sripts 
 
     #playerHitsEnemy = pygame.sprite.spritecollide(player, enemies, True) 
     #playerHitsWalls = pygame.sprite.spritecollide(player, walls, False)         --Player and Enemy will be located in Player.py
