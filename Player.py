@@ -1,7 +1,7 @@
 import pygame, sys, math
 from Weapons import *
 
-
+   
 class Player():
     def __init__(self, pos=[0,0], tileSize= 50):
         tileSize = tileSize - 6
