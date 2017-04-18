@@ -2,8 +2,9 @@ import pygame, sys, math
 from Weapons import *
 
    
-class Player():
+class Player(pygame.sprite.Sprite):
     def __init__(self, pos=[0,0], tileSize= 50):
+        pygame.sprite.Sprite.__init__(self, self.containers)
         tileSize = tileSize - 6
         load = pygame.image.load
         self.imageUp = load("Resources/PlayerImages/WithOutWeapon/PlayerUpNorm.png")
@@ -26,6 +27,10 @@ class Player():
         self.speed = [self.speedx, self.speedy]
         self.rect = self.rect.move(self.speed)
 
+    def update(self, size):
+        self.move()
+        self.bounceScreen(size)
+    
     def go(self, direction):
         if direction == "up":
             self.speedy = -self.maxSpeed

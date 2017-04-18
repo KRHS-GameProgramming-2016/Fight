@@ -9,13 +9,7 @@ from DownWall import *
 
 class Level():
     def __init__(self, levelFile, tileSize=50):
-        self.walls = []
-        self.trees1  = []
-        self.downwalls = []
-        self.enemies = []
         self.tileSize = tileSize
-        self.player = None
-        self.enemies = []
         self.loadLevel(levelFile)
     
     def unloadLevel(self):
