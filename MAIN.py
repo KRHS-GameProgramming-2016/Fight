@@ -7,6 +7,7 @@ from Wall import *
 #from Weapons import *
 from Tree1 import *
 from DownWall import *
+pygame.init()
 
 
 
@@ -33,6 +34,8 @@ DownWall.containers = all, downwalls
 level = Level("level1.lvl")
 
 levlnum = 1   
+
+player = Player.containers
     
     
 while True:
@@ -56,13 +59,17 @@ while True:
                 players.go("stop right")
             if event.key == pygame.K_LEFT:
                 players.go("stop left")
+        else:
+            if event.type == pygame.MOUSEMOTION:
+                pygame.mouse.set_visible(False)
+                players.goMouse(event.pos)
                     
     bgImage = pygame.image.load("Resources/BackgroundImage/Background.png").convert()
     bgRect = bgImage.get_rect()
     all.update(size)    # Need to add into Player, Enemey and Wall sripts 
 
     #playerHitsEnemy = pygame.sprite.spritecollide(player, enemies, True) 
-    #playerHitsWalls = pygame.sprite.spritecollide(player, walls, False)         --Player and Enemy will be located in Player.py
+    playerHitsWalls = pygame.sprite.spritecollide(player, walls, False)         
     #enemyHitsWalls= pygame.sprite.groupcollide(enemies, walls, False, False)
     #EnemieshitsEnemy = pygame.sprite.groupcollide(balls, balls, False, False)
     

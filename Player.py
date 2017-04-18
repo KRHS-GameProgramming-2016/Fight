@@ -39,14 +39,22 @@ class Player():
         if direction == "right":
             self.speedx = self.maxSpeed 
             self.image = self.imageRight
+            
         if direction == "stop up":
             self.speedy = 0
+            self.image = self.imageUp
         if direction == "stop down":
             self.speedy = 0
+            self.image = self.imageDown
         if direction == "stop left":
             self.speedx = 0
+            self.image = self.imageLeft
         if direction == "stop right":
             self.speedx = 0
+            self.image = self.imageRight
+            
+    def goMouse(self, pos):
+        self.rect.center = pos
 
     def bounceScreen(self, size):
         width = size[0]
