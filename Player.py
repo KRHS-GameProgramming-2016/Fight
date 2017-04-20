@@ -75,19 +75,7 @@ class Player(pygame.sprite.Sprite):
             self.speedy = 0
             self.didBounceY = True
 
-    def bounceScreen(self, size):
-        width = size[0]
-        height = size[1]
-        if self.rect.left < 0 or self.rect.right > width:
-            self.speedx = -self.speedx
-            self.move()
-            self.speedx = 0
-            self.didBounceX = True
-        if self.rect.top < 0 or self.rect.bottom > height:
-            self.speedy = -self.speedy
-            self.move()
-            self.speedy = 0
-            self.didBounceY = True 
+
             
     def bounceWall(self, other):
         self.speedx = -self.speedx

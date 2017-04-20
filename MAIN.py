@@ -1,6 +1,8 @@
 import pygame, sys, math, random 
 #from Boss import *
-#from Enemy import *
+#from Enemy1 import *
+#from Enemy2 import *
+#from Enemy3 import *
 from Level import *
 from Player import *               
 from Wall import *
@@ -71,6 +73,9 @@ while True:
     
     for wall in playerHitsWalls:
         player.bounceWall(wall)
+    
+#    for wall in enemyHitsWalls:     Added in enemy already 
+#        enemy.bounceWall(wall)
       
     
     bgColor = r,g,b
