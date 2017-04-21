@@ -1,6 +1,6 @@
 import pygame, sys, math, random
 from Player import *
-from Enemy import *
+from Enemy1 import *
 from Boss import *
 from Weapons import *
 from Wall import *
@@ -16,7 +16,7 @@ class Level():
         self.walls = []
         self.trees1 = []
         self.downwalls = []
-        self.enemySpawn = []
+        self.enemy1Spawn = []
       
                
     def loadLevel(self, levelFile):        
@@ -62,6 +62,10 @@ class Level():
                           self.tileSize)
                 if c == '&':
                     Player([x*self.tileSize + self.tileSize/2,
+                           y*self.tileSize + self.tileSize/2],
+                          self.tileSize)
+                if c == 'E':
+                    Enemy1([x*self.tileSize + self.tileSize/2,
                            y*self.tileSize + self.tileSize/2],
                           self.tileSize)
 

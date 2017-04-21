@@ -1,6 +1,6 @@
 import pygame, sys, math, random 
 #from Boss import *
-#from Enemy1 import *
+from Enemy1 import *
 #from Enemy2 import *
 #from Enemy3 import *
 from Level import *
@@ -25,9 +25,10 @@ bgColor = r,g,b = 21, 64, 22
 all = pygame.sprite.OrderedUpdates()
 players = pygame.sprite.Group()
 walls = pygame.sprite.Group()
+enemies1 = pygame.sprite.Group()
  
 Player.containers = all, players
-#Enemy.containers = all, enemies      -- Will add after the main part of the game is done
+Enemy1.containers = all, enemies1      
 Wall.containers = all, walls    
 Tree1.containers = all, walls
 DownWall.containers = all, walls
@@ -66,16 +67,18 @@ while True:
     
     all.update(size)    # Need to add into Player, Enemey and Wall sripts 
 
-    #playerHitsEnemy = pygame.sprite.spritecollide(player, enemies, True) 
+    playerHitsEnemy1 = pygame.sprite.spritecollide(player, enemies1, True) 
     playerHitsWalls = pygame.sprite.spritecollide(player, walls, False)         
-    #enemyHitsWalls= pygame.sprite.groupcollide(enemies, walls, False, False)
-    #EnemieshitsEnemy = pygame.sprite.groupcollide(balls, balls, False, False)
+    enemy1HitsWalls= pygame.sprite.groupcollide(enemies1, walls, False, False)
+#    EnemieshitsEnemy = pygame.sprite.groupcollide(enemies1, enemies1, False, False)
     
     for wall in playerHitsWalls:
         player.bounceWall(wall)
     
-#    for wall in enemyHitsWalls:     Added in enemy already 
-#        enemy.bounceWall(wall)
+    for wall in enemy1HitsWalls:     
+        enemy.bounceWall(wall)
+        
+
       
     
     bgColor = r,g,b

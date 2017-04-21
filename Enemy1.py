@@ -1,19 +1,22 @@
 import pygame, sys, math, random
+from Weapons import *
 
 class Enemy1(pygame.sprite.Sprite):
-    def __init__(self, pos=[0,0], tileSize=50):
+    def __init__(self, pos=[0,0], tileSize=50, speed=5):
         load = pygame.image.load
-        self.imageUp = load("Resources/EnemyImages/Enemy1/Enemy1Up")
-        self.imageDown = load("Resources/EnemyImages/Enemy1/Enemy1Down")   
-        self.imageLeft = load("Resources/EnemyImages/Enemy1/Enemy1Left")
-        self.imageRight = load("Resources/EnemyImages/Enemy1/Enemy1Right")
+        self.imageUp = load("Resources/EnemyImages/Enemy1/EnemyUp1.png")
+        self.imageDown = load("Resources/EnemyImages/Enemy1/EnemyDown1.png")   
+        self.imageLeft = load("Resources/EnemyImages/Enemy1/EnemyLeft1.png")
+        self.imageRight = load("Resources/EnemyImages/Enemy1/EnemyRight1.png")
         self.imageUp = pygame.transform.scale(self.imageUp, [tileSize,tileSize])
         self.imageDown = pygame.transform.scale(self.imageDown, [tileSize,tileSize])
         self.imageRight = pygame.transform.scale(self.imageRight, [tileSize,tileSize])
         self.imageLeft = pygame.transform.scale(self.imageLeft, [tileSize,tileSize])
         self.image = self.imageLeft
         self.rect = self.image.get_rect(center = pos)
-
+        self.speedx = 0
+        self.speedy = 0
+        self.speed = [self.speedx, self.speedy]
         self.maxSpeed = speed
 
         self.kind = "normal"
