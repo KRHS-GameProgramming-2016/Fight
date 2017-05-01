@@ -18,6 +18,9 @@ class Enemy1(pygame.sprite.Sprite):
         self.speedy = 0
         self.speed = [self.speedx, self.speedy]
         self.maxSpeed = speed
+        
+        print pos
+        print speed
 
         self.kind = "normal"
 
