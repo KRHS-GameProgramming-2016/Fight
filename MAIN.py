@@ -37,6 +37,7 @@ level = Level("level1.lvl")
 levlnum = 1   
 
 player = players.sprites()[0]
+
     
 bgImage = pygame.image.load("Resources/BackgroundImage/Background.png").convert()
 bgRect = bgImage.get_rect()  
