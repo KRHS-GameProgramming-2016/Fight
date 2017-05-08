@@ -112,3 +112,5 @@ class Enemy1(pygame.sprite.Sprite):
             y += y
         return [x, y]
         return math.sqrt(xDiff**2 + yDiff**2)
+        
+        #Need to find out why enemy doesn't show when level loads. Printing the speed, pos and tileSize tells me that the enemy is on the level. 
