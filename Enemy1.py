@@ -20,7 +20,7 @@ class Enemy1(pygame.sprite.Sprite):
         self.kind = "normal"
 
 
-    
+
         self.decideDirection()
 
 
@@ -32,7 +32,9 @@ class Enemy1(pygame.sprite.Sprite):
         self.state = "right"
         self.prevState = "right"
 
-
+        print(pos)
+        print(speed)
+        print(tileSize)
 
     def move(self):
         self.didBounceX = False

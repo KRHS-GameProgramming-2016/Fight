@@ -65,7 +65,8 @@ class Level():
                            y*self.tileSize + self.tileSize/2],
                           self.tileSize)
                 if c == 'E':
-                    Enemy1([x*self.tileSize + self.tileSize/2,
+                    Enemy1(3,
+                          [x*self.tileSize + self.tileSize/2,
                            y*self.tileSize + self.tileSize/2],
                           self.tileSize)
 
