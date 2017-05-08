@@ -71,7 +71,7 @@ while True:
     playerHitsEnemy1 = pygame.sprite.spritecollide(player, enemies1, True) 
     playerHitsWalls = pygame.sprite.spritecollide(player, walls, False)         
     enemy1HitsWalls= pygame.sprite.groupcollide(enemies1, walls, False, False)
-#    EnemieshitsEnemy = pygame.sprite.groupcollide(enemies1, enemies1, False, False)
+    EnemieshitsEnemy = pygame.sprite.groupcollide(enemies1, enemies1, False, False)
     
     for wall in playerHitsWalls:
         player.bounceWall(wall)
