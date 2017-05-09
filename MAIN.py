@@ -6,12 +6,12 @@ from Enemy1 import *
 from Level import *
 from Player import *               
 from Wall import *
-#from Weapons import *
+#from Weapon1 import *
 from Tree1 import *
 from DownWall import *
 pygame.init()
 
-   
+#Before Boss1, add weapons
 
 pygame.init()
 clock = pygame.time.Clock()
@@ -26,12 +26,14 @@ all = pygame.sprite.OrderedUpdates()
 players = pygame.sprite.Group()
 walls = pygame.sprite.Group()
 enemies1 = pygame.sprite.Group()
+#weapons1 = pyhame.sprite.Group()
  
 Player.containers = all, players
 Enemy1.containers = all, enemies1      
 Wall.containers = all, walls    
 Tree1.containers = all, walls
 DownWall.containers = all, walls
+#Weapon1.containers = all, weapons1
 level = Level("level1.lvl")
 
 levlnum = 1   
@@ -66,7 +68,7 @@ while True:
                     
     
     
-    all.update(size)    # Need to add into Player, Enemey and Wall sripts 
+    all.update(size)    
 
     playerHitsEnemy1 = pygame.sprite.spritecollide(player, enemies1, True) 
     playerHitsWalls = pygame.sprite.spritecollide(player, walls, False)         

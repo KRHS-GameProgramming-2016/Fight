@@ -1,6 +1,5 @@
 import pygame, sys, math
-from Weapons import *
-
+#from Weapon1 import *
    
 class Player(pygame.sprite.Sprite):
     def __init__(self, pos=[0,0], tileSize= 50):

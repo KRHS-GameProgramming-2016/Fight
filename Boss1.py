@@ -1,13 +1,15 @@
 import pygame, sys, math, random
-#from Weapons import *
+from Weapons import *
 
-class Enemy1(pygame.sprite.Sprite):
+#Need to make images for Boss1
+
+class Boss1(pygame.sprite.Sprite):
     def __init__(self, speed=0, pos=[0,0], tileSize= 50):
         self.tileSize = tileSize - 6
-        self.imageLeft = pygame.image.load("Resources/EnemyImages/Enemy1/EnemyLeft1.png")
-        self.imageRight = pygame.image.load("Resources/EnemyImages/Enemy1/EnemyRight1.png")
-        self.imageUp = pygame.image.load("Resources/EnemyImages/Enemy1/EnemyUp1.png")
-        self.imageDown = pygame.image.load("Resources/EnemyImages/Enemy1/EnemyDown1.png")
+        self.imageLeft = pygame.image.load("")
+        self.imageRight = pygame.image.load("")
+        self.imageUp = pygame.image.load("")
+        self.imageDown = pygame.image.load("")
 
         self.imageUp = pygame.transform.scale(self.imageUp, [tileSize,tileSize])
         self.imageDown = pygame.transform.scale(self.imageDown, [tileSize,tileSize])
@@ -112,5 +114,3 @@ class Enemy1(pygame.sprite.Sprite):
             y += y
         return [x, y]
         return math.sqrt(xDiff**2 + yDiff**2)
-        
-        #Need to find out why enemy doesn't show when level loads. Printing the speed, pos and tileSize tells me that the enemy is on the level. 

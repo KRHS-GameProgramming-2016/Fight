@@ -1,8 +1,8 @@
 import pygame, sys, math, random
 from Player import *
 from Enemy1 import *
-from Boss import *
-from Weapons import *
+#from Boss import *
+#from Weapon1 import *
 from Wall import *
 from Tree1 import *
 from DownWall import *
@@ -60,6 +60,10 @@ class Level():
                     DownWall([x*self.tileSize + self.tileSize/2,
                            y*self.tileSize + self.tileSize/2],
                           self.tileSize)
+                #if c == '%':
+                    #BasicSword([x*self.tileSize + self.tileSize/2,
+                           #y*self.tileSize + self.tileSize/2],
+                          #self.tileSize)
                 if c == '&':
                     Player([x*self.tileSize + self.tileSize/2,
                            y*self.tileSize + self.tileSize/2],
