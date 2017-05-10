@@ -1,5 +1,5 @@
 import pygame, sys, math, random
-#from Weapons import *
+#from Weapons import * working on
 
 class Enemy1(pygame.sprite.Sprite):
     def __init__(self, speed=0, pos=[0,0], tileSize= 50):

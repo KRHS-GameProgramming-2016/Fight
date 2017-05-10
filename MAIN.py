@@ -6,7 +6,7 @@ from Enemy1 import *
 from Level import *
 from Player import *               
 from Wall import *
-#from Weapon1 import *
+#from Weapon1 import * working on
 from Tree1 import *
 from DownWall import *
 pygame.init()

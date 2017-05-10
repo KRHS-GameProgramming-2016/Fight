@@ -2,7 +2,7 @@ import pygame, sys, math, random
 from Player import *
 from Enemy1 import *
 #from Boss import *
-#from Weapon1 import *
+#from Weapon1 import *  working on
 from Wall import *
 from Tree1 import *
 from DownWall import *
