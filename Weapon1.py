@@ -20,7 +20,11 @@ class BasicSword(pygame.sprite.Sprite):
         self.rect = self.image.get_rect(center = pos)
         
         
+        
     def swordDmg(self):
+        
+        
+    
         
         
     

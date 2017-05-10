@@ -3,6 +3,7 @@ import pygame, sys, math, random
 
 class Enemy1(pygame.sprite.Sprite):
     def __init__(self, speed=0, pos=[0,0], tileSize= 50):
+        pygame.sprite.Sprite.__init__(self, self.containers)
         self.tileSize = tileSize - 6
         self.imageLeft = pygame.image.load("Resources/EnemyImages/Enemy1/EnemyLeft1.png")
         self.imageRight = pygame.image.load("Resources/EnemyImages/Enemy1/EnemyRight1.png")
@@ -15,6 +16,7 @@ class Enemy1(pygame.sprite.Sprite):
         self.imageLeft = pygame.transform.scale(self.imageLeft, [tileSize,tileSize])
 
         self.image = self.imageRight
+        self.rect = self.image.get_rect(center = pos)
         self.maxSpeed = speed
 
         self.kind = "normal"
@@ -35,7 +37,13 @@ class Enemy1(pygame.sprite.Sprite):
         print(pos)
         print(speed)
         print(tileSize)
-
+        self.size = tileSize
+    
+    def update(self, size):
+        self.move()
+        self.animate()
+        self.bounceScreen(size)
+        
     def move(self):
         self.didBounceX = False
         self.didBounceY = False
@@ -49,8 +57,7 @@ class Enemy1(pygame.sprite.Sprite):
             if self.rect.top % self.size == 0:
             #print "left/right", self.rect.center[1]
                 self.decideDirection()
-        self.animate()
-
+        
     def decideDirection(self):
         d = random.randint(0,2)
         if d == 0: #up
@@ -88,8 +95,16 @@ class Enemy1(pygame.sprite.Sprite):
         self.didBounceX = True
         self.didBounceY = True
         self.move()
+    
+    def bounceEnemy(self, other):
+        if other != self:
+            self.speedx = -self.speedx
+            self.speedy = -self.speedy
+            self.didBounceX = True
+            self.didBounceY = True
+            self.move()
 
-    def screenCollide(self, screenSize):
+    def bounceScreen(self, screenSize):
         screenWidth = screenSize[0]
         screenHeight = screenSize[1]
         if self.rect.top < 0 or self.rect.bottom > screenHeight:

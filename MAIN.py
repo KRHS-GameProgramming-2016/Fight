@@ -25,11 +25,11 @@ bgColor = r,g,b = 21, 64, 22
 all = pygame.sprite.OrderedUpdates()
 players = pygame.sprite.Group()
 walls = pygame.sprite.Group()
-enemies1 = pygame.sprite.Group()
+enemies = pygame.sprite.Group()
 #weapons1 = pyhame.sprite.Group()
  
 Player.containers = all, players
-Enemy1.containers = all, enemies1      
+Enemy1.containers = all, enemies     
 Wall.containers = all, walls    
 Tree1.containers = all, walls
 DownWall.containers = all, walls
@@ -70,18 +70,23 @@ while True:
     
     all.update(size)    
 
-    playerHitsEnemy1 = pygame.sprite.spritecollide(player, enemies1, True) 
+    playerHitsEnemy1 = pygame.sprite.spritecollide(player, enemies, True) 
     playerHitsWalls = pygame.sprite.spritecollide(player, walls, False)         
-    enemy1HitsWalls= pygame.sprite.groupcollide(enemies1, walls, False, False)
-    EnemieshitsEnemy = pygame.sprite.groupcollide(enemies1, enemies1, False, False)
+    enemy1HitsWalls= pygame.sprite.groupcollide(enemies, walls, False, False)
+    enemy1HitsEnemy = pygame.sprite.groupcollide(enemies, enemies, False, False)
     
     for wall in playerHitsWalls:
         player.bounceWall(wall)
     
-    for wall in enemy1HitsWalls:     
-        enemy.bounceWall(wall)
-        
+    for enemy in enemy1HitsWalls:
+        for wall in enemy1HitsWalls[enemy]:     
+            enemy.bounceWall(wall)
 
+    for enemy1 in enemy1HitsEnemy:
+        for enemy2 in enemy1HitsEnemy[enemy1]:     
+            enemy1.bounceEnemy(enemy2)
+        
+    
       
     
     bgColor = r,g,b
