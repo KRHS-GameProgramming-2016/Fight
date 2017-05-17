@@ -6,9 +6,10 @@ from Enemy1 import *
 from Level import *
 from Player import *               
 from Wall import *
-#from Weapon1 import * working on
+from Weapon1 import * 
 from Tree1 import *
 from DownWall import *
+from Goal import *
 pygame.init()
 
 #Before Boss1, add weapons
@@ -26,14 +27,16 @@ all = pygame.sprite.OrderedUpdates()
 players = pygame.sprite.Group()
 walls = pygame.sprite.Group()
 enemies = pygame.sprite.Group()
-#weapons1 = pyhame.sprite.Group()
+weapons1 = pygame.sprite.Group()
+goals = pygame.sprite.Group()
  
 Player.containers = all, players
 Enemy1.containers = all, enemies     
 Wall.containers = all, walls    
 Tree1.containers = all, walls
 DownWall.containers = all, walls
-#Weapon1.containers = all, weapons1
+Weapon1.containers = all, weapons1
+Goal.containers = all, goals
 level = Level("level1.lvl")
 
 levlnum = 1   
@@ -74,6 +77,7 @@ while True:
     playerHitsWalls = pygame.sprite.spritecollide(player, walls, False)         
     enemy1HitsWalls= pygame.sprite.groupcollide(enemies, walls, False, False)
     enemy1HitsEnemy = pygame.sprite.groupcollide(enemies, enemies, False, False)
+    playerHitgoals = pygame.sprite.spritecollide(player, goals, False) 
     
     for wall in playerHitsWalls:
         player.bounceWall(wall)
@@ -85,7 +89,14 @@ while True:
     for enemy1 in enemy1HitsEnemy:
         for enemy2 in enemy1HitsEnemy[enemy1]:     
             enemy1.bounceEnemy(enemy2)
-        
+            
+    for goal in playerHitgoals:
+        level.unloadLevel(all)
+        levelNumber += 1
+        level = Level(size)
+
+            
+
     
       
     
