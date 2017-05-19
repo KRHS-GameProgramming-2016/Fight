@@ -39,7 +39,8 @@ Weapon1.containers = all, weapons1
 Goal.containers = all, goals
 level = Level("level1.lvl")
 
-levlnum = 1   
+levelNumber = 1   
+
 
 player = players.sprites()[0]
 
@@ -90,10 +91,10 @@ while True:
         for enemy2 in enemy1HitsEnemy[enemy1]:     
             enemy1.bounceEnemy(enemy2)
             
-    for goal in playerHitgoals:
-        level.unloadLevel(all)
-        levelNumber += 1
-        level = Level(size)
+    #for goal in playerHitgoals:
+        #level.unloadLevel(all)
+        #levelNumber += 1
+        #level = Level(levelNumber, size)
 
             
 
