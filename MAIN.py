@@ -72,13 +72,19 @@ while True:
                     
     
     
-    all.update(size)    
+    all.update(size)  
+    
+
 
     playerHitsEnemy1 = pygame.sprite.spritecollide(player, enemies, True), 
     playerHitsWalls = pygame.sprite.spritecollide(player, walls, False)         
     enemy1HitsWalls= pygame.sprite.groupcollide(enemies, walls, False, False)
     enemy1HitsEnemy = pygame.sprite.groupcollide(enemies, enemies, False, False)
     playerHitgoals = pygame.sprite.spritecollide(player, goals, False) 
+    #playerHitsWeapon1 = pygame.sprite.spritecollide(player, weapons1, True)
+    
+    if pygame.sprite.spritecollide(player, weapons1, True):
+        print "Weapon was touched by player!"  
     
     for wall in playerHitsWalls:
         player.bounceWall(wall)
@@ -98,7 +104,6 @@ while True:
         player = players.sprites()[0]
 
             
-
     
       
     

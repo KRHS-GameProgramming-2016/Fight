@@ -26,6 +26,7 @@ class Player(pygame.sprite.Sprite):
         self.hp = 100
         
         
+        
     def heal(self, amount):
         self.hp += amount
         
@@ -35,6 +36,9 @@ class Player(pygame.sprite.Sprite):
         
     def hitEnemy1(self, Enemy1):
         self.hp -= Enemy.damage
+        
+    #def weapon1Collide(self, Weapon1):
+        
 
     def update(self, size):
         self.move()
