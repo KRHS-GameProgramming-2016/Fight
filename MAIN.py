@@ -74,7 +74,7 @@ while True:
     
     all.update(size)    
 
-    playerHitsEnemy1 = pygame.sprite.spritecollide(player, enemies, True) 
+    playerHitsEnemy1 = pygame.sprite.spritecollide(player, enemies, True), 
     playerHitsWalls = pygame.sprite.spritecollide(player, walls, False)         
     enemy1HitsWalls= pygame.sprite.groupcollide(enemies, walls, False, False)
     enemy1HitsEnemy = pygame.sprite.groupcollide(enemies, enemies, False, False)
@@ -91,10 +91,11 @@ while True:
         for enemy2 in enemy1HitsEnemy[enemy1]:     
             enemy1.bounceEnemy(enemy2)
             
-    #for goal in playerHitgoals:
-        #level.unloadLevel(all)
-        #levelNumber += 1
-        #level = Level(levelNumber, size)
+    for goal in playerHitgoals:
+        level.unloadLevel(all)
+        levelNumber += 1
+        level = Level("level" + str(levelNumber) + ".lvl")
+        player = players.sprites()[0]
 
             
 

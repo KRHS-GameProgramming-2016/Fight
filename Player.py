@@ -1,4 +1,5 @@
 import pygame, sys, math
+from Enemy1 import *
 #from Weapon1 import * working on
    
 class Player(pygame.sprite.Sprite):
@@ -7,7 +8,7 @@ class Player(pygame.sprite.Sprite):
         tileSize = tileSize - 6
         load = pygame.image.load
         self.imageUp = load("Resources/PlayerImages/WithOutWeapon/PlayerUpNorm.png")
-        self.imageDown = load("Resources/PlayerImages/WithOutWeapon/PlayerDownNorm.png")   #The player loads with weapon
+        self.imageDown = load("Resources/PlayerImages/WithOutWeapon/PlayerDownNorm.png")   
         self.imageLeft = load("Resources/PlayerImages/WithOutWeapon/PlayerLeftNorm.png")
         self.imageRight = load("Resources/PlayerImages/WithOutWeapon/PlayerRightNorm.png")
         self.imageUp = pygame.transform.scale(self.imageUp, [tileSize,tileSize])
@@ -21,14 +22,25 @@ class Player(pygame.sprite.Sprite):
         self.speed = [self.speedx, self.speedy]
         self.maxSpeed = 5
         self.startPos = pos
+        self.living = True
+        self.hp = 100
+        
+        
+    def heal(self, amount):
+        self.hp += amount
         
     def move(self):
         self.speed = [self.speedx, self.speedy]
         self.rect = self.rect.move(self.speed)
+        
+    def hitEnemy1(self, Enemy1):
+        self.hp -= Enemy.damage
 
     def update(self, size):
         self.move()
         self.bounceScreen(size)
+        if self.hp <= 0:
+            self.living = False 
     
     def go(self, direction):
         if direction == "up":

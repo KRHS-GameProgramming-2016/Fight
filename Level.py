@@ -13,13 +13,9 @@ class Level():
         self.tileSize = tileSize
         self.loadLevel(levelFile)
     
-    def unloadLevel(self):
-        self.walls = []
-        self.trees1 = []
-        self.downwalls = []
-        self.enemy1Spawn = []
-
-      
+    def unloadLevel(self, group):
+        for s in group.sprites():
+            s.kill()
                
     def loadLevel(self, levelFile):        
         f = open("Resources/levels/"+levelFile, 'r')
