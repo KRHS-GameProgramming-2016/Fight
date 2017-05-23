@@ -34,9 +34,7 @@ class Enemy1(pygame.sprite.Sprite):
         self.state = "right"
         self.prevState = "right"
 
-        print(pos)
-        print(speed)
-        print(tileSize)
+
         self.size = tileSize
     
     def update(self, size):

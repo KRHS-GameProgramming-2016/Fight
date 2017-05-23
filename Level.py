@@ -59,7 +59,7 @@ class Level():
                            y*self.tileSize + self.tileSize/2],
                           self.tileSize)
                 if c == '%':
-                    Weapon1([x*self.tileSize + self.tileSize/2,
+                    Sword([x*self.tileSize + self.tileSize/2,
                            y*self.tileSize + self.tileSize/2],
                           self.tileSize)
                 if c == '&':

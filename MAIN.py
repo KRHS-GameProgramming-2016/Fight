@@ -27,7 +27,7 @@ all = pygame.sprite.OrderedUpdates()
 players = pygame.sprite.Group()
 walls = pygame.sprite.Group()
 enemies = pygame.sprite.Group()
-weapons1 = pygame.sprite.Group()
+weapons = pygame.sprite.Group()
 goals = pygame.sprite.Group()
  
 Player.containers = all, players
@@ -35,7 +35,7 @@ Enemy1.containers = all, enemies
 Wall.containers = all, walls    
 Tree1.containers = all, walls
 DownWall.containers = all, walls
-Weapon1.containers = all, weapons1
+Sword.containers = all, weapons
 Goal.containers = all, goals
 level = Level("level1.lvl")
 
@@ -81,10 +81,10 @@ while True:
     enemy1HitsWalls= pygame.sprite.groupcollide(enemies, walls, False, False)
     enemy1HitsEnemy = pygame.sprite.groupcollide(enemies, enemies, False, False)
     playerHitgoals = pygame.sprite.spritecollide(player, goals, False) 
-    #playerHitsWeapon1 = pygame.sprite.spritecollide(player, weapons1, True)
+    playerHitsWeapon = pygame.sprite.spritecollide(player, weapons, True)
     
-    if pygame.sprite.spritecollide(player, weapons1, True):
-        print "Weapon was touched by player!"  
+    for weapon in playerHitsWeapon:
+        player.equip(weapon)
     
     for wall in playerHitsWalls:
         player.bounceWall(wall)
