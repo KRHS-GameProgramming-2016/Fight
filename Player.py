@@ -33,8 +33,9 @@ class Player(pygame.sprite.Sprite):
         self.speed = [self.speedx, self.speedy]
         self.maxSpeed = 5
         self.startPos = pos
-        self.living = True
+        self.hearts = 5
         self.hp = 100
+        self.HeartHP = 100
         self.damage = 10
         
     def heal(self, amount):
@@ -46,6 +47,8 @@ class Player(pygame.sprite.Sprite):
         
     def hitEnemy1(self, Enemy1):
         self.hp -= Enemy.damage
+        print hp
+
         
     def equip(self, weapon):
         print "Weapon was touched by player"

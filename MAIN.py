@@ -85,6 +85,7 @@ while True:
     
     for weapon in playerHitsWeapon:
         player.equip(weapon)
+        
     
     for wall in playerHitsWalls:
         player.bounceWall(wall)
