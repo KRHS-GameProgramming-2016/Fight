@@ -86,6 +86,10 @@ while True:
     for weapon in playerHitsWeapon:
         player.equip(weapon)
         
+    for enemy in playerHitsEnemy1:
+        player.health(player)
+        
+        #health sub
     
     for wall in playerHitsWalls:
         player.bounceWall(wall)

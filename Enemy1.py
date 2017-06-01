@@ -18,6 +18,8 @@ class Enemy1(pygame.sprite.Sprite):
         self.image = self.imageRight
         self.rect = self.image.get_rect(center = pos)
         self.maxSpeed = speed
+        self.Health = 100
+        self.Enemy1DMG = 10
 
         self.kind = "normal"
 

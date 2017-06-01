@@ -34,8 +34,7 @@ class Player(pygame.sprite.Sprite):
         self.maxSpeed = 5
         self.startPos = pos
         self.hearts = 5
-        self.hp = 100
-        self.HeartHP = 100
+        self.PHealth = 100
         self.damage = 10
         
     def heal(self, amount):
@@ -48,6 +47,9 @@ class Player(pygame.sprite.Sprite):
     def hitEnemy1(self, Enemy1):
         self.hp -= Enemy.damage
         print hp
+        
+    def health(self, Enemy1):
+        print "Player killed enemy"
 
         
     def equip(self, weapon):
@@ -70,8 +72,6 @@ class Player(pygame.sprite.Sprite):
     def update(self, size):
         self.move()
         self.bounceScreen(size)
-        if self.hp <= 0:
-            self.living = False 
     
     def go(self, direction):
         if direction == "up":
