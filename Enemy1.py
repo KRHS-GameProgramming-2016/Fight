@@ -1,4 +1,5 @@
 import pygame, sys, math, random
+from Player import *
 #from Weapons import * working on
 
 class Enemy1(pygame.sprite.Sprite):
@@ -20,6 +21,7 @@ class Enemy1(pygame.sprite.Sprite):
         self.maxSpeed = speed
         self.Health = 100
         self.Enemy1DMG = 10
+
 
         self.kind = "normal"
 

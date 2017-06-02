@@ -1,5 +1,4 @@
 import pygame, sys, math
-from Enemy1 import *
 #from Weapon1 import * working on
    
 class Player(pygame.sprite.Sprite):
@@ -7,6 +6,9 @@ class Player(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self, self.containers)
         tileSize = tileSize - 6
         load = pygame.image.load
+        
+        #self.healthBackImage = pygame.transform.sclae(pygame.image.load("Resources/Health/PlayerHealth/PlayerBackHP")
+        
         #No Weapon
         self.imageUpNW = pygame.transform.scale(pygame.image.load("Resources/PlayerImages/WithOutWeapon/PlayerUpNorm.png"),  [tileSize,tileSize])
         self.imageDownNW = pygame.transform.scale(pygame.image.load("Resources/PlayerImages/WithOutWeapon/PlayerDownNorm.png"),  [tileSize,tileSize])
@@ -36,17 +38,23 @@ class Player(pygame.sprite.Sprite):
         self.hearts = 5
         self.PHealth = 100
         self.damage = 10
+        self.hp = self.PHealth
         
-    def heal(self, amount):
-        self.hp += amount
         
     def move(self):
         self.speed = [self.speedx, self.speedy]
         self.rect = self.rect.move(self.speed)
         
-    def hitEnemy1(self, Enemy1):
-        self.hp -= Enemy.damage
-        print hp
+    def hitEnemy(self, enemy):   #Player lost health
+        self.hp -= enemy.Enemy1DMG
+        print self.hp
+        if self.hp <= 70:
+            print "Health is lower then 70"
+        if self.hp <= 50:
+            print "Color yellow"
+        if self.hp <= 30:
+            print "Color red"
+
         
     def health(self, Enemy1):
         print "Player killed enemy"

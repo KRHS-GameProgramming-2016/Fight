@@ -75,8 +75,7 @@ while True:
     all.update(size)  
     
 
-
-    playerHitsEnemy1 = pygame.sprite.spritecollide(player, enemies, True), 
+    playerHitsEnemy = pygame.sprite.spritecollide(player, enemies, True), 
     playerHitsWalls = pygame.sprite.spritecollide(player, walls, False)         
     enemy1HitsWalls= pygame.sprite.groupcollide(enemies, walls, False, False)
     enemy1HitsEnemy = pygame.sprite.groupcollide(enemies, enemies, False, False)
@@ -86,8 +85,9 @@ while True:
     for weapon in playerHitsWeapon:
         player.equip(weapon)
         
-    for enemy in playerHitsEnemy1:
+    for enemy in playerHitsEnemy[0]: #playerHitsEnemy is returning a tuple...this is an ugly fix that might break at some point and who knows how
         player.health(player)
+        player.hitEnemy(enemy)
         
         #health sub
     
