@@ -88,6 +88,7 @@ while True:
     for enemy in playerHitsEnemy[0]: #playerHitsEnemy is returning a tuple...this is an ugly fix that might break at some point and who knows how
         player.health(player)
         player.hitEnemy(enemy)
+        enemy.hitPlayer(player)
         
         #health sub
     

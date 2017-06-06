@@ -19,8 +19,9 @@ class Enemy1(pygame.sprite.Sprite):
         self.image = self.imageRight
         self.rect = self.image.get_rect(center = pos)
         self.maxSpeed = speed
-        self.Health = 100
+        self.enemyHealth = 100
         self.Enemy1DMG = 10
+        self.enemyhp = self.enemyHealth
 
 
         self.kind = "normal"
@@ -45,6 +46,13 @@ class Enemy1(pygame.sprite.Sprite):
         self.move()
         self.animate()
         self.bounceScreen(size)
+        
+    def hitPlayer(self, player):
+        self.enemyhp -= player.damage
+        print self.enemyhp
+        if self.enemyhp >= 70:
+            print "hp 70"
+        
         
     def move(self):
         self.didBounceX = False
