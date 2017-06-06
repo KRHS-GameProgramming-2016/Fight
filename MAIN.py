@@ -75,7 +75,7 @@ while True:
     all.update(size)  
     
 
-    playerHitsEnemy = pygame.sprite.spritecollide(player, enemies, True), 
+    playerHitsEnemy = pygame.sprite.spritecollide(player, enemies, False), 
     playerHitsWalls = pygame.sprite.spritecollide(player, walls, False)         
     enemy1HitsWalls= pygame.sprite.groupcollide(enemies, walls, False, False)
     enemy1HitsEnemy = pygame.sprite.groupcollide(enemies, enemies, False, False)

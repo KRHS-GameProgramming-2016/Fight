@@ -56,16 +56,16 @@ class Player(pygame.sprite.Sprite):
         self.hp -= enemy.Enemy1DMG
         #print self.hp
         if self.hp <= 100:
-            print "plr 100"
+            print "plr < 100"
             self.hpImage = self.imageHPG
         if self.hp <= 50:
-            print "plr 50"
+            print "plr < 50"
             self.hpImage = self.imageHPY
         if self.hp <= 30:
-            print "plr 30"
+            print "plr < 30"
             self.hpImage = self.imageHPR
         if self.hp <= 10:
-            print "plr 10"
+            print "plr < 10"
             self.hpImage = self.imageHPR
 
         
