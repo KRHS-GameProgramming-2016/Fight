@@ -28,13 +28,10 @@ class Player(pygame.sprite.Sprite):
         self.imageRight = self.imageRightNW
         self.imageLeft = self.imageLeftNW
         
-        self.imageHPG = self.plrHPGreen
-        self.imageHPY = self.plrHPYellow
-        self.imageHPR = self.plrHPRed
+
         
         self.weapon = "none"
         
-        self.hpImage = self.imageHPG
         self.image = self.imageLeft
         self.rect = self.image.get_rect(center = pos)
         self.speedx = 0
@@ -54,18 +51,14 @@ class Player(pygame.sprite.Sprite):
         
     def hitEnemy(self, enemy):   #Player lost health
         self.hp -= enemy.Enemy1DMG
-        #print self.hp
+        print self.hp
         if self.hp <= 100:
-            print "plr < 100"
             self.hpImage = self.imageHPG
         if self.hp <= 50:
-            print "plr < 50"
             self.hpImage = self.imageHPY
         if self.hp <= 30:
-            print "plr < 30"
             self.hpImage = self.imageHPR
         if self.hp <= 10:
-            print "plr < 10"
             self.hpImage = self.imageHPR
         if self.hp <= 0:
             self.kill()
