@@ -67,6 +67,8 @@ class Player(pygame.sprite.Sprite):
         if self.hp <= 10:
             print "plr < 10"
             self.hpImage = self.imageHPR
+        if self.hp <= 0:
+            self.kill()
 
         
     def health(self, Enemy1):

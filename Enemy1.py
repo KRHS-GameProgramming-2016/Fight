@@ -47,12 +47,8 @@ class Enemy1(pygame.sprite.Sprite):
         print self.enemyhp
         if self.enemyhp >= 100:
             print "enemyhp > 100"
-        if self.enemyhp >= 70:
-            print "enemyhp > 70"
-        if self.enemyhp >= 50:
-            print "enemyhp > 50"
-        if self.enemyhp >= 30:
-            print "enemyhp > 30"
+        if self.enemyhp >= 0:
+            self.kill()
         
             
 
