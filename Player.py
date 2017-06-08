@@ -7,9 +7,9 @@ class Player(pygame.sprite.Sprite):
         tileSize = tileSize - 6
         load = pygame.image.load
         #player health
-        self.plrHPGreen = pygame.transform.scale(pygame.image.load("Resources/Health/PlayerHealth/PlayerNorm.png"),  [tileSize,tileSize])
-        self.plrHPYellow = pygame.transform.scale(pygame.image.load("Resources/Health/PlayerHealth/PlayerYellow.png"),  [tileSize,tileSize])
-        self.plrHPRed = pygame.transform.scale(pygame.image.load("Resources/Health/PlayerHealth/PlayerLow.png"),  [tileSize,tileSize])
+        #self.plrHPGreen = pygame.transform.scale(pygame.image.load("Resources/Health/PlayerHealth/PlayerNorm.png"),  [tileSize,tileSize])
+        #self.plrHPYellow = pygame.transform.scale(pygame.image.load("Resources/Health/PlayerHealth/PlayerYellow.png"),  [tileSize,tileSize])
+        #self.plrHPRed = pygame.transform.scale(pygame.image.load("Resources/Health/PlayerHealth/PlayerLow.png"),  [tileSize,tileSize])
         
         #No Weapon
         self.imageUpNW = pygame.transform.scale(pygame.image.load("Resources/PlayerImages/WithOutWeapon/PlayerUpNorm.png"),  [tileSize,tileSize])
@@ -53,13 +53,17 @@ class Player(pygame.sprite.Sprite):
         self.hp -= enemy.Enemy1DMG
         print self.hp
         if self.hp <= 100:
-            self.hpImage = self.imageHPG
+            pass
+            #wip
         if self.hp <= 50:
-            self.hpImage = self.imageHPY
+            pass
+            #wip
         if self.hp <= 30:
-            self.hpImage = self.imageHPR
+            pass
+            #wip
         if self.hp <= 10:
-            self.hpImage = self.imageHPR
+            pass
+            #wip
         if self.hp <= 0:
             self.kill()
 

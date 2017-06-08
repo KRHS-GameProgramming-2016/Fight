@@ -10,6 +10,7 @@ from Weapon1 import *
 from Tree1 import *
 from DownWall import *
 from Goal import *
+#from Health import * 
 pygame.init()
 
 #Before Boss1, add weapons
@@ -29,6 +30,7 @@ walls = pygame.sprite.Group()
 enemies = pygame.sprite.Group()
 weapons = pygame.sprite.Group()
 goals = pygame.sprite.Group()
+#healths = pygame.sprite.Group()
  
 Player.containers = all, players
 Enemy1.containers = all, enemies     
@@ -37,6 +39,7 @@ Tree1.containers = all, walls
 DownWall.containers = all, walls
 Sword.containers = all, weapons
 Goal.containers = all, goals
+#Health.containers = all, healths
 level = Level("level1.lvl")
 
 levelNumber = 1   

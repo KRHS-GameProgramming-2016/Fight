@@ -7,6 +7,7 @@ from Wall import *
 from Tree1 import *
 from DownWall import *
 from Goal import *
+#from Health import *
 
 class Level():
     def __init__(self, levelFile, tileSize=50):
@@ -70,6 +71,10 @@ class Level():
                     Goal([x*self.tileSize + self.tileSize/2,
                            y*self.tileSize + self.tileSize/2],
                           self.tileSize)
+                #if c == '=':
+                    #Health([x*self.tileSize + self.tileSize/2,
+                           #y*self.tileSize + self.tileSize/2],
+                          #self.tileSize)
                 if c == 'E':
                     Enemy1(3,
                           [x*self.tileSize + self.tileSize/2,
