@@ -44,7 +44,7 @@ class Enemy1(pygame.sprite.Sprite):
         
     def hitPlayer(self, player):
         self.enemyhp -= player.damage
-        print self.enemyhp
+        print "Enemy health", self.enemyhp
         if self.enemyhp >= 100:
             print "enemyhp > 100"
         if self.enemyhp >= 0:

@@ -51,9 +51,9 @@ class Player(pygame.sprite.Sprite):
         
     def hitEnemy(self, enemy):   #Player lost health
         self.hp -= enemy.Enemy1DMG
-        print self.hp
+        print "Player health: ", self.hp
         if self.hp <= 100:
-            pass
+            pass 
             #wip
         if self.hp <= 50:
             pass
